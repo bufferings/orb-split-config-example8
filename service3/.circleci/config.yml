@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  service3-say-hello:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!3"
+
+workflows:
+  service3-say-hello-workflow:
+    jobs:
+      - common-say-hello
+      - service3-say-hello

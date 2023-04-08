@@ -1,0 +1,10 @@
+extends: relaxed
+
+rules:
+  document-start: disable
+  quoted-strings:
+    quote-type: double
+    required: false
+  line-length:
+    max: 200
+    allow-non-breakable-inline-mappings: true

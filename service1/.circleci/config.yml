@@ -1,0 +1,23 @@
+version: 2.1
+
+parameters:
+  service1-my-name:
+    type: string
+
+jobs:
+  service1-say-hello:
+    docker:
+      - image: cimg/base:stable
+    environment:
+      MY_NAME: << pipeline.parameters.service1-my-name >>
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, ${MY_NAME}!1"
+
+workflows:
+  service1-say-hello-workflow:
+    jobs:
+      - common-say-hello
+      - service1-say-hello
