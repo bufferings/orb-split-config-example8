@@ -10,7 +10,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     environment:
-      MY_NAME: << pipeline.parameters.service1-my-name >>
+      MY_NAME: << pipeline.parameters.service2-my-name >>
     steps:
       - checkout
       - run:
