@@ -3,6 +3,7 @@ version: 2.1
 parameters:
   service1-my-name:
     type: string
+    default: "World"
 
 jobs:
   service1-say-hello:
